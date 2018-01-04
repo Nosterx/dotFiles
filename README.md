@@ -19,12 +19,12 @@ Manage dotfiles.
 
 `:PluginInstall`
 
-5. Follow YouCompleteMe installation instructions https://github.com/Valloric/YouCompleteMe
+5. Install YouCompleteMe (vim autocomplete plugin) https://github.com/Valloric/YouCompleteMe
 
 For deb-based systems:
 `sudo apt-get install build-essential cmake python-dev python3-dev && cd ~/.vim/bundle/YouCompleteMe && ./install.py`
 
-6. Installation instructions from https://github.com/powerline/fonts in one line
+6. Install nice fonts https://github.com/powerline/fonts in one line
 
 `git clone https://github.com/powerline/fonts.git --depth=1 && cd fonts && ./install.sh && cd .. && rm -rf fonts`
 
