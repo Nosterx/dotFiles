@@ -8,9 +8,11 @@ Manage dotfiles.
 
 3. `$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 
-5. `:PluginInstall`
+4. `:PluginInstall`
 
-4. For each of the config file that want to manage using git, you can run 
+5. Follow YouCompleteMe installation instructions https://github.com/Valloric/YouCompleteMe
+
+6. For each of the config file that want to manage using git, you can run 
   `python moveDotFileInHomeAndCreateSymoblicLink.py FILE_PATH` 
    (if only a simple file name is given, the filepath would be defaulted to 
    the home folder)
