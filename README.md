@@ -6,10 +6,9 @@ Manage dotfiles.
 
 2. `$ python symlink_dotfiles.py`
 
-3. To install VIM plugins, run `python vim_plugin_install.py`. It would use 
-   [pathogen](https://github.com/tpope/vim-pathogen) for plugin management.
-   So if you don't have pathogon installed, it would install for you also.
-   To update the install list, change the `vim_plugin_on_github` file.
+3. `$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+
+5. `:PluginInstall`
 
 4. For each of the config file that want to manage using git, you can run 
   `python moveDotFileInHomeAndCreateSymoblicLink.py FILE_PATH` 
