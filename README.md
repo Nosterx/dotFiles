@@ -32,18 +32,6 @@ For deb-based systems:
 `git clone https://github.com/powerline/fonts.git --depth=1 && cd fonts && ./install.sh && cd .. && rm -rf fonts`
 
 
-# Foot Notes on vim key mappings
-This section is irrelevant to the propuse of this repo.. but just some interesting points to take note
-
-1. If one wants to use mapping `<c-?>`, note that ? can only be letters
-2. And additionally, the combination below better not used:
-
-        <c-m> -- means <enter>
-        <c-i> -- means <tab>
-        <c-s> -- means suspend, in most terminals
-
-3. Better be careful that, do not conflict with the tmux's prefix-key
-
 # TODO
 make one-step installation =)
 
