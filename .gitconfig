@@ -43,7 +43,7 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 [github]
-	user = flyfy1
+	user = Nosterx
 [user]
 	email = nosterx@gmail.com
 	name = Nosterx
