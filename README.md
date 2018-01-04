@@ -4,7 +4,7 @@ Manage dotfiles.
 # Usage
 1. `$ git clone https://github.com/Nosterx/dotfiles.git`
 
-2. `$ python symlink_dotfiles.py`
+2. `$ python symlink_dotfiles.py` `--help` for details
 
 3. `$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 
