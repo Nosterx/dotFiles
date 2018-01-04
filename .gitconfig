@@ -1,0 +1,46 @@
+[user]
+## name, email 
+# These are to be set in the env variables (pls define them in your bashrc):
+#   - GIT_AUTHOR_NAME
+#   - GIT_AUTHOR_EMAIL
+#
+#   See more: <https://git-scm.com/docs/git-commit-tree>
+
+[branch "master"]
+  remote = origin
+[push]
+	default = matching
+
+[alias]
+  st = status
+  stp = status --porcelain
+  aa = add -A :/
+  au = add -u
+  ci = commit
+  cm = commit -m
+  pc = push origin HEAD
+  pf = push --force-with-lease origin HEAD
+  ph = push heroku master
+  pff = push -f origin HEAD
+  up = pull --rebase origin master
+  uh = pull --rebase origin HEAD
+  uu = pull --rebase upstream master
+  co = checkout
+  d  = diff
+  b = branch
+  br = branch -r
+  bd = branch -D
+  rbc = rebase --continue
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore_global
+[merge]
+	tool = vimdiff
+[diff]
+	tool = vimdiff
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+[github]
+	user = flyfy1

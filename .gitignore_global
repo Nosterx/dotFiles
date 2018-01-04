@@ -1,0 +1,6 @@
+.DS_Store
+*.idea
+.gradle
+.byebug_history
+.ipynb_checkpoints
+.bundle
