@@ -38,13 +38,16 @@ def symlink_files(files, source_folder, target_folder):
 @click.command()
 @click.option('--dst',
               default=os.environ['HOME'],
-              help='Target user home directory')
+              show_default=True,
+              help='Home directory of target user')
 @click.option('--src',
               default=os.path.join(os.environ['HOME'], 'dotfiles'),
+              show_default=True,
               help='DotFiles directory')
 @click.option('--backup',
               default=os.path.join(os.environ['HOME'], 'dotfiles_backup'),
-              help='Target user home directory')
+              show_default=True,
+              help='Directory to backup origin dotfiles')
 def main(dst, src, backup):
     """ symlink files in src which starts with dot
     and ends with '.conf' extension or with no extension to dst"""
