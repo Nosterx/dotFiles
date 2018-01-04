@@ -1,5 +1,5 @@
 # Purpose
-Manage dotfiles.
+Manage dotfiles to setup my linux environment. 
 
 # Usage
 
