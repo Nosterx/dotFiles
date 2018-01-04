@@ -3,13 +3,14 @@ Manage dotfiles.
 
 # Usage
 1. Go Home
+
 `cd ~`
 
 2. Clone dotfiles
 `git clone https://github.com/Nosterx/dotfiles.git`
 
 3. Symlink dotfiles to your home folder
-`python symlink_dotfiles.py` `--help` for details
+`python dotfiles/symlink_dotfiles.py` `--help` for details
 
 4. Install Vum Bundle
 `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
