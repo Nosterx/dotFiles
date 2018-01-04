@@ -2,17 +2,23 @@
 Manage dotfiles.
 
 # Usage
-1. `$ git clone https://github.com/Nosterx/dotfiles.git`
+1. Clone dotfiles
+`$ git clone https://github.com/Nosterx/dotfiles.git`
 
-2. `$ python symlink_dotfiles.py` `--help` for details
+2. Symlink dotfiles to your home folder
+`$ python symlink_dotfiles.py` `--help` for details
 
-3. `$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+3. Install Vum Bundle
+`$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 
-4. `:PluginInstall`
+4. Install Vim Plugins (run in vim)
+`:PluginInstall`
 
 5. Follow YouCompleteMe installation instructions https://github.com/Valloric/YouCompleteMe
 
-6. For each of the config file that want to manage using git, you can run 
+6. To install fonts follow instructions https://github.com/powerline/fonts
+
+7. For each of the config file that want to manage using git, you can run 
   `python moveDotFileInHomeAndCreateSymoblicLink.py FILE_PATH` 
    (if only a simple file name is given, the filepath would be defaulted to 
    the home folder)
@@ -32,9 +38,7 @@ This section is irrelevant to the propuse of this repo.. but just some interesti
 3. Better be careful that, do not conflict with the tmux's prefix-key
 
 # TODO
-- Currently the user need to handle the .bashrc file themselves (by sourcing this file in their .bashrc).
-  Consider using script to auto-add the sourcing part, and don't add if it already exists in the `.bashrc`
-  folder.
+make one-step installation =)
 
 # Originally from
 https://github.com/flyfy1/dotFiles
