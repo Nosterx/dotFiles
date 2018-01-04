@@ -1,14 +1,13 @@
 # Purpose
-Use this repo to manage my config files
+Manage dotfiles.
 
-# How to use
-1. Clone this project; if you want to use it for your own, fork it
+# Usage
+1. `$ git clone https://github.com/Nosterx/dotfiles.git`
 
-2. To create symbolic links of the config files into your home directory, 
-   run `python linkDotFilesBackToHome.py`
+2. `$ python symlink_dotfiles.py`
 
 3. To install VIM plugins, run `python vim_plugin_install.py`. It would use 
-   [pathogon](https://github.com/tpope/vim-pathogen) for plugin management.
+   [pathogen](https://github.com/tpope/vim-pathogen) for plugin management.
    So if you don't have pathogon installed, it would install for you also.
    To update the install list, change the `vim_plugin_on_github` file.
 
@@ -35,3 +34,6 @@ This section is irrelevant to the propuse of this repo.. but just some interesti
 - Currently the user need to handle the .bashrc file themselves (by sourcing this file in their .bashrc).
   Consider using script to auto-add the sourcing part, and don't add if it already exists in the `.bashrc`
   folder.
+
+# Originally from
+https://github.com/flyfy1/dotFiles
