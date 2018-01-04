@@ -2,28 +2,28 @@
 Manage dotfiles.
 
 # Usage
-1. Clone dotfiles
-`$ git clone https://github.com/Nosterx/dotfiles.git`
+1. Go Home
+`cd ~`
 
-2. Symlink dotfiles to your home folder
-`$ python symlink_dotfiles.py` `--help` for details
+2. Clone dotfiles
+`git clone https://github.com/Nosterx/dotfiles.git`
 
-3. Install Vum Bundle
-`$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+3. Symlink dotfiles to your home folder
+`python symlink_dotfiles.py` `--help` for details
 
-4. Install Vim Plugins (run in vim)
+4. Install Vum Bundle
+`git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+
+5. Install Vim Plugins (run in vim)
 `:PluginInstall`
 
-5. Follow YouCompleteMe installation instructions https://github.com/Valloric/YouCompleteMe
+6. Follow YouCompleteMe installation instructions https://github.com/Valloric/YouCompleteMe
+For deb-based systems:
+`sudo apt-get install build-essential cmake python-dev python3-dev && cd ~/.vim/bundle/YouCompleteMe && ./install.py`
 
-6. To install fonts follow instructions https://github.com/powerline/fonts
+7. Installation instructions from https://github.com/powerline/fonts in one line
+`git clone https://github.com/powerline/fonts.git --depth=1 && cd fonts && ./install.sh && cd .. && rm -rf fonts`
 
-7. For each of the config file that want to manage using git, you can run 
-  `python moveDotFileInHomeAndCreateSymoblicLink.py FILE_PATH` 
-   (if only a simple file name is given, the filepath would be defaulted to 
-   the home folder)
-   It will move the file into the config file forder, and put an symbolic link
-   in its origin place. 
 
 # Foot Notes on vim key mappings
 This section is irrelevant to the propuse of this repo.. but just some interesting points to take note
@@ -39,6 +39,7 @@ This section is irrelevant to the propuse of this repo.. but just some interesti
 
 # TODO
 make one-step installation =)
+
 
 # Originally from
 https://github.com/flyfy1/dotFiles
