@@ -4,7 +4,7 @@ import click
 
 def create_folder(folder_path):
     if not os.path.isdir(folder_path):
-        os.mkdir(folder_path, 0700)
+        os.mkdir(folder_path, 0o700)
 
 
 def collect_dotfiles(source_dir):
@@ -37,15 +37,15 @@ def symlink_files(files, source_folder, target_folder):
 
 @click.command()
 @click.option('--dst',
-              default=os.environ['HOME'],
+              default=os.path.expanduser('~'),
               show_default=True,
               help='Home directory of target user')
 @click.option('--src',
-              default=os.path.join(os.environ['HOME'], 'dotfiles'),
+              default=os.path.join(os.path.expanduser('~'), 'dotfiles'),
               show_default=True,
               help='DotFiles directory')
 @click.option('--backup',
-              default=os.path.join(os.environ['HOME'], 'dotfiles_backup'),
+              default=os.path.join(os.path.expanduser('~'), 'dotfiles_backup'),
               show_default=True,
               help='Directory to backup origin dotfiles')
 def main(dst, src, backup):
