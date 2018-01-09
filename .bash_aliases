@@ -5,4 +5,3 @@ alias l='ls -CF'
 alias sl='ls'
 alias LS='ls'
 alias ipython='ipython --TerminalInteractiveShell.editing_mode=vi'
-set -o vi
