@@ -9,6 +9,7 @@ Manage dotfiles to setup my linux environment.
 
 2. Symlink dotfiles to your home folder
 
+`pip install click` - library for creating commandline interfaces
 `python dotfiles/symlink_dotfiles.py` `--help` for details
 
 3. Install Vum Bundle
