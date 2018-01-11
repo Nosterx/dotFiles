@@ -8,10 +8,8 @@ def create_folder(folder_path):
 
 
 def collect_dotfiles(source_dir):
-    files = [f for f in os.listdir(source_dir)
-                 if f.startswith('.') 
-                   and os.path.isfile(os.path.join(source_dir, f))
-                   and (os.path.splitext(f)[-1] in ('', '.conf'))]
+    files = [f for f in os.listdir(source_dir) 
+             if f.startswith('.') and not f=='.git']
     return files
 
 
