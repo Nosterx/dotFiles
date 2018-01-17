@@ -615,4 +615,5 @@ class MyPrompts(Prompts):
 c.TerminalInteractiveShell.prompts_class = MyPrompts
 c.InteractiveShellApp.extensions = ['autoreload']
 c.InteractiveShellApp.exec_lines = ['%autoreload 2']
+c.InteractiveShellApp.exec_lines = ['%xmode Verbose']
 c.InteractiveShellApp.exec_lines = ['%rehashx']
