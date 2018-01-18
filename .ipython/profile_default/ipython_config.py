@@ -609,7 +609,7 @@ class MyPrompts(Prompts):
         return [
             (Token.Prompt, '{}['.format(mode)),
             (Token.PromptNum, str(self.shell.execution_count)),
-            (Token.Prompt, '] {}: '.format(os.getcwd()))
+            (Token.Prompt, '] {}: '.format(os.path.basename(os.getcwd())))
         ]
 
 c.TerminalInteractiveShell.prompts_class = MyPrompts
