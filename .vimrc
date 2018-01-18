@@ -53,3 +53,4 @@ set shiftwidth=4
 set expandtab
 set encoding=utf-8
 hi Normal guibg=NONE ctermbg=NONE
+autocmd BufWritePost *.py call Flake8()
