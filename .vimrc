@@ -23,6 +23,8 @@ Plugin 'https://github.com/tpope/vim-fugitive.git'
 Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 " VimSurround
 Plugin 'https://github.com/tpope/vim-surround.git'
+" MyPy
+Plugin 'integralist/vim-mypy'
 call vundle#end()  
 filetype plugin on
 filetype plugin indent on
