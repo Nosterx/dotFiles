@@ -31,6 +31,7 @@ filetype plugin indent on
 syntax on
 syntax enable
 set background=dark
+set colorcolumn=80
 colorscheme solarized
 set number
 nnoremap <F4> :NERDTreeToggle<CR>
@@ -54,3 +55,7 @@ set expandtab
 set encoding=utf-8
 hi Normal guibg=NONE ctermbg=NONE
 autocmd BufWritePost *.py call Flake8()
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
