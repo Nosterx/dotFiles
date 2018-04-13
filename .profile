@@ -21,3 +21,5 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 export BETTER_EXCEPTIONS=1
+
+export PATH="$HOME/.cargo/bin:$PATH"

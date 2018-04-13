@@ -25,6 +25,16 @@ Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 Plugin 'https://github.com/tpope/vim-surround.git'
 " MyPy
 Plugin 'integralist/vim-mypy'
+" CTRL-P
+Plugin 'kien/ctrlp.vim'
+" RUST
+Plugin 'rust-lang/rust.vim'
+" Djnago support
+Plugin 'django.vim'
+" Syntastic
+Plugin 'scrooloose/syntastic'
+" Git Gutter
+Plugin 'airblade/vim-gitgutter'
 call vundle#end()  
 filetype plugin on
 filetype plugin indent on
@@ -54,8 +64,20 @@ set shiftwidth=4
 set expandtab
 set encoding=utf-8
 hi Normal guibg=NONE ctermbg=NONE
-autocmd BufWritePost *.py call Flake8()
+" autocmd BufWritePost *.py call Flake8()
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_python_exec = '/usr/bin/python3'
