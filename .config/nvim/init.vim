@@ -34,6 +34,7 @@ let g:Powerline_symbols='unicode'
 "Deoplete
 let g:deoplete#enable_at_startup = 1
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 "Syntastic
 let g:syntastic_always_populate_loc_list = 1
