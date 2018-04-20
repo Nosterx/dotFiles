@@ -8,18 +8,18 @@ def create_folder(folder_path):
 
 
 def collect_dotfiles(source_dir):
-    files = [f for f in os.listdir(source_dir) 
-             if f.startswith('.') and not f=='.git']
+    files = [f for f in os.listdir(source_dir)
+             if f.startswith('.') and not f == '.git']
     return files
 
 
 def backup_files(files, src_folder, backup_folder):
     for filename in files:
         source_filepath = os.path.join(src_folder, filename)
-        if os.path.exists(source_filepath) and not os.path.islink(source_filepath):
+        if os.path.exists(source_filepath)\
+                and not os.path.islink(source_filepath):
             backup_filepath = os.path.join(backup_folder, filename)
             os.rename(source_filepath, backup_filepath)
-
 
 
 def symlink_files(files, source_folder, target_folder):
