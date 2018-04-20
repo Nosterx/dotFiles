@@ -2,11 +2,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'iCyMind/NeoSolarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"deoplete for python
-Plug 'zchee/deoplete-jedi'
-" git support
 Plug 'https://github.com/tpope/vim-fugitive.git'
+" Jedi
+Plug 'davidhalter/jedi-vim'
 " nerdtree
 Plug 'https://github.com/scrooloose/nerdtree.git'
 " Syntastic
@@ -21,6 +19,11 @@ Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/majutsushi/tagbar.git'
 " CTRL-P
 Plug 'kien/ctrlp.vim'
+" Snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+" SuperTab
+Plug 'ervandew/supertab'
 call plug#end()
 
 "Airline
@@ -31,10 +34,10 @@ set t_Co=256
 let g:airline_powerline_fonts = 1
 let g:Powerline_symbols='unicode'
 
-"Deoplete
-let g:deoplete#enable_at_startup = 1
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+"UltiSnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 "Syntastic
 let g:syntastic_always_populate_loc_list = 1
@@ -48,6 +51,7 @@ set statusline+=%*
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+let g:syntastic_python_checkers = ['flake8']
 
 "NerdTree
 nnoremap <F4> :NERDTreeToggle<CR>
