@@ -65,6 +65,8 @@ nnoremap <F4> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc$']
 
 "EDITOR SETTINGS
+noremap <Leader>t :noautocmd vimgrep /TODO/j **/*.py<CR>:cw<CR>
+set ignorecase
 set pastetoggle=<F3>
 colorscheme NeoSolarized
 set background=dark
