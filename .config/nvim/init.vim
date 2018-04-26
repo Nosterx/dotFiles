@@ -58,7 +58,8 @@ set statusline+=%*
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_checkers = ['autopep8', 'pylint', 'flake8', 'pyflakes', 'pep8']
+let g:syntastic_python_pylint_args='-d C0111 --load-plugins=pylint-django'
 
 "NerdTree
 nnoremap <F4> :NERDTreeToggle<CR>
