@@ -65,6 +65,9 @@ let g:syntastic_python_pylint_args='-d C0111 --load-plugins=pylint-django'
 nnoremap <F4> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc$']
 
+"TagBar
+nmap <F8> :TagbarToggle<CR>
+
 "EDITOR SETTINGS
 noremap <Leader>t :noautocmd vimgrep /TODO/j **/*.py<CR>:cw<CR>
 set ignorecase
