@@ -3,8 +3,9 @@ Plug 'iCyMind/NeoSolarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'https://github.com/tpope/vim-fugitive.git'
-" Jedi
-Plug 'davidhalter/jedi-vim'
+" Completition
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-jedi'
 " nerdtree
 Plug 'https://github.com/scrooloose/nerdtree.git'
 " Syntastic
@@ -24,6 +25,8 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " SuperTab
 Plug 'ervandew/supertab'
+" clear search highlighting
+Plug 'romainl/vim-cool'
 call plug#end()
 
 "Airline
@@ -39,6 +42,10 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+"Deoplete
+let g:deoplete#enable_at_startup = 1
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
 "Syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -51,13 +58,19 @@ set statusline+=%*
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_checkers = ['autopep8', 'pylint', 'flake8', 'pyflakes', 'pep8']
+let g:syntastic_python_pylint_args='-d C0111 --load-plugins=pylint-django'
 
 "NerdTree
 nnoremap <F4> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc$']
 
+"TagBar
+nmap <F8> :TagbarToggle<CR>
+
 "EDITOR SETTINGS
+noremap <Leader>t :noautocmd vimgrep /TODO/j **/*.py<CR>:cw<CR>
+set ignorecase
 set pastetoggle=<F3>
 colorscheme NeoSolarized
 set background=dark
