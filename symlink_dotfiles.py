@@ -8,8 +8,8 @@ def create_folder(folder_path):
 
 
 def collect_dotfiles(source_dir):
-    files = [f for f in os.listdir(source_dir)
-             if f.startswith('.') and not f == '.git']
+    with open(os.path.join(source_dir, 'files_list.txt'), 'r') as fl:
+        files = [f.strip() for f in fl.readlines()]
     return files
 
 
@@ -29,7 +29,8 @@ def symlink_files(files, source_folder, target_folder):
             os.remove(target_filepath)
         except OSError:
             pass
-        source_filepath = os.path.join(source_folder, filename)
+        source_filepath = os.path.join(source_folder,
+                                       os.path.split(filename)[1])
         os.symlink(source_filepath, target_filepath)
 
 
@@ -46,7 +47,7 @@ def symlink_files(files, source_folder, target_folder):
               default=os.path.join(os.path.expanduser('~'), 'dotfiles_backup'),
               show_default=True,
               help='Directory to backup origin dotfiles')
-def main(dst, src, backup):
+def main(dst, src, backup, add=None):
     """ symlink files in src which starts with dot
     and ends with '.conf' extension or with no extension to dst"""
     create_folder(backup)
