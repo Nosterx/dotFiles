@@ -1,0 +1,11 @@
+.vimrc
+.gitignore_global
+.profile
+.inputrc
+.gitconfig
+.bash_aliases
+.ipython/profile_default/ipython_config.py
+.config/nvim/init.vim
+.config/konsole/styles/konsole.css
+.config/konsolerc
+.local/share/konsole/Profile#1.profile

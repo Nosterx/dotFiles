@@ -18,7 +18,8 @@ def backup_files(files, src_folder, backup_folder):
         source_filepath = os.path.join(src_folder, filename)
         if os.path.exists(source_filepath)\
                 and not os.path.islink(source_filepath):
-            backup_filepath = os.path.join(backup_folder, filename)
+            backup_filepath = os.path.join(backup_folder,
+                                           os.path.split(filename)[1])
             os.rename(source_filepath, backup_filepath)
 
 

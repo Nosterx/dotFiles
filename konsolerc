@@ -1,0 +1,19 @@
+[Desktop Entry]
+DefaultProfile=Profile#1.profile
+
+[Favorite Profiles]
+Favorites=
+
+[MainWindow]
+Height 1080=451
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAAB08AAAQgAAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
+Width 1920=638
+Window-Maximized 1080x1920=true
+
+[TabBar]
+NewTabBehavior=PutNewTabAfterCurrentTab
+TabBarPosition=Top
+TabBarUseUserStyleSheet=true
+TabBarUserStyleSheetFile=file:///home/nosterx/.config/konsole/styles/konsole.css
