@@ -1,6 +1,7 @@
 .vimrc
 .gitignore_global
 .profile
+.isort.cfg
 .inputrc
 .gitconfig
 .bash_aliases

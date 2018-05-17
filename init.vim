@@ -27,6 +27,8 @@ Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
 " clear search highlighting
 Plug 'romainl/vim-cool'
+" imports sorting
+Plug 'stsewd/isort.nvim', {'do': ':UpdateRemotePlugins'}
 call plug#end()
 
 "Airline
