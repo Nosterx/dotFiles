@@ -27,6 +27,8 @@ Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
 " clear search highlighting
 Plug 'romainl/vim-cool'
+" code formatting tool
+Plug 'ambv/black'
 call plug#end()
 
 "Airline
@@ -45,6 +47,10 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 "Deoplete
 let g:deoplete#enable_at_startup = 1
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
+"Black
+let g:black_fast = 0
+let g:black_linelength = 79
 
 "Syntastic
 let g:syntastic_always_populate_loc_list = 1
