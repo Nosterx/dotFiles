@@ -29,6 +29,8 @@ Plug 'ervandew/supertab'
 Plug 'romainl/vim-cool'
 " code formatting tool
 Plug 'ambv/black'
+" imports sorting
+Plug 'stsewd/isort.nvim', {'do': ':UpdateRemotePlugins'}
 call plug#end()
 
 "Airline

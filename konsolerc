@@ -6,8 +6,8 @@ Favorites=
 
 [MainWindow]
 Height 1080=451
-MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAAAAB08AAAQgAAAABAAAAAQAAAAIAAAACPwAAAAA
+MenuBar=Enabled
+State=AAAA/wAAAAD9AAAAAAAAB0sAAAQiAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
 Width 1920=638
 Window-Maximized 1080x1920=true
@@ -16,4 +16,4 @@ Window-Maximized 1080x1920=true
 NewTabBehavior=PutNewTabAfterCurrentTab
 TabBarPosition=Top
 TabBarUseUserStyleSheet=true
-TabBarUserStyleSheetFile=file:///home/nosterx/.config/konsole/styles/konsole.css
+TabBarUserStyleSheetFile=file:///home/nosterx/dotfiles/konsole_copy.css
