@@ -6,10 +6,11 @@ Plug 'https://github.com/tpope/vim-fugitive.git'
 " Completition
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
+Plug 'davidhalter/jedi-vim'
 " nerdtree
 Plug 'https://github.com/scrooloose/nerdtree.git'
 " Syntastic
-Plug 'scrooloose/syntastic'
+Plug 'vim-syntastic/syntastic'
 " git support
 Plug 'https://github.com/tpope/vim-fugitive.git'
 " Git Gutter
@@ -32,7 +33,29 @@ Plug 'ambv/black'
 " imports sorting
 Plug 'stsewd/isort.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+" Powerful commenting utility
+Plug 'scrooloose/nerdcommenter'
+" Smart auto-indentation for Python
+Plug 'vim-scripts/indentpython.vim'
 call plug#end()
+
+" ***SETUP PYTHON PATH***
+" Point YCM to the Pipenv created virtualenv, if possible
+" At first, get the output of 'pipenv --venv' command.
+let pipenv_venv_path = system('pipenv --venv')
+" The above system() call produces a non zero exit code whenever
+" a proper virtual environment has not been found.
+" So, second, we only point YCM to the virtual environment when
+" the call to 'pipenv --venv' was successful.
+" Remember, that 'pipenv --venv' only points to the root directory
+" of the virtual environment, so we have to append a full path to
+" the python executable.
+if shell_error == 0
+  let venv_path = substitute(pipenv_venv_path, '\n', '', '') . '/bin/python'
+else
+  let venv_path = '/usr/bin/python3.6'
+endif
+" ***END SETUP***
 
 "Airline
 let g:airline#extensions#tabline#enabled = 1
@@ -56,11 +79,11 @@ let g:black_fast = 0
 let g:black_linelength = 79
 
 "Syntastic
+let g:syntastic_python_python_exec = venv_path
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_python_python_exec = '/usr/bin/python3'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -68,7 +91,11 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_python_checkers = ['autopep8', 'pylint', 'flake8', 'pyflakes', 'pep8']
-let g:syntastic_python_pylint_args='-d C0111 --load-plugins=pylint-django'
+let g:syntastic_python_pylint_args='-d C0111 --load-plugins=pylint-django --max-line-length=120'
+let g:syntastic_python_flake8_post_args='--max-line-length=120'
+let g:syntastic_python_autopep8_post_args='--max-line-length=120'
+let g:syntastic_python_pyflakes_post_args='--max-line-length=120'
+let g:syntastic_python_pep8_post_args='--max-line-length=120'
 
 "NerdTree
 nnoremap <F4> :NERDTreeToggle<CR>
@@ -78,6 +105,7 @@ let NERDTreeIgnore=['\.pyc$']
 nmap <F8> :TagbarToggle<CR>
 
 "EDITOR SETTINGS
+let g:python3_host_prog = '/usr/bin/python3.6'
 noremap <Leader>t :noautocmd vimgrep /TODO/j **/*.py<CR>:cw<CR>
 set ignorecase
 set pastetoggle=<F3>
