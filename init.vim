@@ -31,6 +31,7 @@ Plug 'romainl/vim-cool'
 Plug 'ambv/black'
 " imports sorting
 Plug 'stsewd/isort.nvim', {'do': ':UpdateRemotePlugins'}
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 call plug#end()
 
 "Airline
