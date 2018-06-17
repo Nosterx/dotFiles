@@ -51,9 +51,9 @@ let pipenv_venv_path = system('pipenv --venv')
 " of the virtual environment, so we have to append a full path to
 " the python executable.
 if shell_error == 0
-  let venv_path = substitute(pipenv_venv_path, '\n', '', '') . '/bin/python'
+  let venv_path = substitute(pipenv_venv_path, '\n', '', '') . '/bin/'
 else
-  let venv_path = '/usr/bin/python3.6'
+  let venv_path = '/usr/bin/'
 endif
 " ***END SETUP***
 
@@ -79,7 +79,6 @@ let g:black_fast = 0
 let g:black_linelength = 79
 
 "Syntastic
-let g:syntastic_python_python_exec = venv_path
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -90,12 +89,11 @@ set statusline+=%*
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_python_checkers = ['autopep8', 'pylint', 'flake8', 'pyflakes', 'pep8']
+let g:syntastic_python_checkers = ['pylint', 'flake8']
+let g:syntastic_python_flake8_exec = venv_path . 'flake8'
+let g:syntastic_python_pylint_exec = venv_path . 'pylint'
 let g:syntastic_python_pylint_args='-d C0111 --load-plugins=pylint-django --max-line-length=120'
 let g:syntastic_python_flake8_post_args='--max-line-length=120'
-let g:syntastic_python_autopep8_post_args='--max-line-length=120'
-let g:syntastic_python_pyflakes_post_args='--max-line-length=120'
-let g:syntastic_python_pep8_post_args='--max-line-length=120'
 
 "NerdTree
 nnoremap <F4> :NERDTreeToggle<CR>
