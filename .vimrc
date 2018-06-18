@@ -1,41 +1,39 @@
 filetype off
 " VUNDLE SECTION
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugged')
+Plug 'VundleVim/Vundle.vim'
 " nerdtree
-Plugin 'https://github.com/scrooloose/nerdtree.git'
+Plug 'https://github.com/scrooloose/nerdtree.git'
 " Color Scheme
-Plugin 'https://github.com/altercation/vim-colors-solarized.git'
+Plug 'https://github.com/altercation/vim-colors-solarized.git'
 " indentLine
-Plugin 'https://github.com/Yggdroot/indentLine.git'
+Plug 'https://github.com/Yggdroot/indentLine.git'
 " tagbar
-Plugin 'https://github.com/majutsushi/tagbar.git'
+Plug 'https://github.com/majutsushi/tagbar.git'
 " vim-airline
-Plugin 'https://github.com/vim-airline/vim-airline.git'
+Plug 'https://github.com/vim-airline/vim-airline.git'
 " vim-airline-themes
-Plugin 'https://github.com/vim-airline/vim-airline-themes.git'
+Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 " flake8
-Plugin 'https://github.com/nvie/vim-flake8.git'
+Plug 'https://github.com/nvie/vim-flake8.git'
 " git support
-Plugin 'https://github.com/tpope/vim-fugitive.git'
+Plug 'https://github.com/tpope/vim-fugitive.git'
 " YouCompleteMe
-Plugin 'https://github.com/Valloric/YouCompleteMe.git'
+Plug 'https://github.com/Valloric/YouCompleteMe.git'
 " VimSurround
-Plugin 'https://github.com/tpope/vim-surround.git'
+Plug 'https://github.com/tpope/vim-surround.git'
 " MyPy
-Plugin 'integralist/vim-mypy'
+Plug 'integralist/vim-mypy'
 " CTRL-P
-Plugin 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
 " RUST
-Plugin 'rust-lang/rust.vim'
+Plug 'rust-lang/rust.vim'
 " Djnago support
-Plugin 'django.vim'
+Plug 'django.vim'
 " Syntastic
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 " Git Gutter
-Plugin 'airblade/vim-gitgutter'
-call vundle#end()  
+Plug 'airblade/vim-gitgutter'
 filetype plugin on
 filetype plugin indent on
 syntax on
@@ -44,7 +42,7 @@ set background=dark
 set colorcolumn=80
 colorscheme solarized
 set number
-nnoremap <F4> :NERDTreeToggle<CR>
+nnoremap <F4>:NERDTreeToggle<CR>
 let g:airline#extensions#tabline#enabled = 1
 autocmd FileType python set sw=4
 autocmd FileType python set ts=4

@@ -596,9 +596,11 @@ c.TerminalInteractiveShell.editing_mode = 'vi'
 
 ## If True, any %store-d variables will be automatically restored when IPython
 #  starts.
-#c.StoreMagics.autorestore = False
+c.StoreMagics.autorestore = True
 from IPython.terminal.prompts import Prompts, Token
 from prompt_toolkit.key_binding.vi_state import InputMode
+from IPython.core.magic import register_line_magic
+
 import os
 
 
@@ -617,3 +619,28 @@ c.InteractiveShellApp.extensions = ['autoreload']
 c.InteractiveShellApp.exec_lines = ['%autoreload 2']
 c.InteractiveShellApp.exec_lines = ['%xmode Verbose']
 c.InteractiveShellApp.exec_lines = ['%rehashx']
+c.AliasManager.user_aliases = [
+    ('ci', 'countryside-search manage_index create_version village'),
+    ('fi', 'countryside-search manage_index index_village_version'),
+    ('di', 'countryside-search manage_index delete_version village'),
+    ('ai', 'countryside-search manage_index update_alias village'),
+]
+def ecsl(self):
+    import os
+    os.environ['SIMPLE_SETTINGS'] = 'countryside.settings.local'
+    return "export ['SIMPLE_SETTINGS'] = countryside.settings.local"
+
+def ets(self):
+    import os
+    os.environ['SIMPLE_SETTINGS'] = 'tests.settings'
+    return "export ['SIMPLE_SETTINGS'] = tests.settings"
+
+def ecssl(self):
+    import os
+    os.environ['SIMPLE_SETTINGS'] = 'countryside_search.settings.local'
+    return "export ['SIMPLE_SETTINGS'] = countryside_search.settings.local"
+
+def ec(self):
+    import os
+    os.environ['CONSUL_HTTP_ADDR'] = "consul.dev.cian.ru:8500"
+    return "export ['CONSUL_HTTP_ADDR'] = consul.dev.cian.ru:8500"

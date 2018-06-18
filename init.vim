@@ -6,6 +6,7 @@ Plug 'https://github.com/tpope/vim-fugitive.git'
 " Completition
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
+Plug 'davidhalter/jedi-vim'
 " nerdtree
 Plug 'https://github.com/scrooloose/nerdtree.git'
 " Syntastic
@@ -29,11 +30,22 @@ Plug 'ervandew/supertab'
 Plug 'romainl/vim-cool'
 " imports sorting
 Plug 'stsewd/isort.nvim', {'do': ':UpdateRemotePlugins'}
+" gutentags
+" Plug 'ludovicchabant/vim-gutentags'
+" NerdTree git support
+Plug 'Xuyuanp/nerdtree-git-plugin'
+" Dracula colorscheme
+Plug 'dracula/vim', { 'as': 'dracula' }
+"
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 call plug#end()
+
+" Jedi
+let g:jedi#completions_enabled = 0
 
 "Airline
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_solarized_bg='dark'
+"let g:airline_solarized_bg='dark'
 let g:airline_theme='solarized'
 set t_Co=256
 let g:airline_powerline_fonts = 1
@@ -60,12 +72,17 @@ set statusline+=%*
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_python_checkers = ['autopep8', 'pylint', 'flake8', 'pyflakes', 'pep8']
-let g:syntastic_python_pylint_args='-d C0111 --load-plugins=pylint-django'
+"let g:syntastic_python_checkers = ['autopep8', 'pylint', 'flake8', 'pyflakes', 'pep8']
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_pylint_args='-d C0111 --load-plugins=pylint-django --max-line-length=120'
+"let g:syntastic_python_flake8_args = "--max-line-length=120"
+"let g:syntastic_python_pyflakes_args = "--max-line-length=120"
+"let g:syntastic_python_autopep8_args = "--max-line-length=120"
+"let g:syntastic_python_pep8_args = "--max-line-length=120"
 
 "NerdTree
 nnoremap <F4> :NERDTreeToggle<CR>
-let NERDTreeIgnore=['\.pyc$']
+let NERDTreeIgnore=['__pycache__', '\.pyc$']
 
 "TagBar
 nmap <F8> :TagbarToggle<CR>
@@ -75,8 +92,8 @@ noremap <Leader>t :noautocmd vimgrep /TODO/j **/*.py<CR>:cw<CR>
 set ignorecase
 set pastetoggle=<F3>
 colorscheme NeoSolarized
-set background=dark
-set colorcolumn=80
+"set background=dark
+set colorcolumn=80,120
 set termguicolors
 set tabstop=4
 set shiftwidth=4
@@ -95,3 +112,7 @@ syntax enable
 autocmd FileType python set sw=4
 autocmd FileType python set ts=4
 autocmd FileType python set sts=4
+function MyCustomHighlights()
+    hi semshiUnresolved ctermbg=161 guifg=#ffaf00 cterm=underline gui=underline guibg=#d7005f
+endfunction
+autocmd FileType python call MyCustomHighlights()
