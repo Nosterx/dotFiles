@@ -599,7 +599,6 @@ c.TerminalInteractiveShell.editing_mode = 'vi'
 c.StoreMagics.autorestore = True
 from IPython.terminal.prompts import Prompts, Token
 from prompt_toolkit.key_binding.vi_state import InputMode
-from IPython.core.magic import register_line_magic
 
 import os
 
@@ -625,22 +624,3 @@ c.AliasManager.user_aliases = [
     ('di', 'countryside-search manage_index delete_version village'),
     ('ai', 'countryside-search manage_index update_alias village'),
 ]
-def ecsl(self):
-    import os
-    os.environ['SIMPLE_SETTINGS'] = 'countryside.settings.local'
-    return "export ['SIMPLE_SETTINGS'] = countryside.settings.local"
-
-def ets(self):
-    import os
-    os.environ['SIMPLE_SETTINGS'] = 'tests.settings'
-    return "export ['SIMPLE_SETTINGS'] = tests.settings"
-
-def ecssl(self):
-    import os
-    os.environ['SIMPLE_SETTINGS'] = 'countryside_search.settings.local'
-    return "export ['SIMPLE_SETTINGS'] = countryside_search.settings.local"
-
-def ec(self):
-    import os
-    os.environ['CONSUL_HTTP_ADDR'] = "consul.dev.cian.ru:8500"
-    return "export ['CONSUL_HTTP_ADDR'] = consul.dev.cian.ru:8500"
