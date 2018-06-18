@@ -24,12 +24,8 @@ Plug 'kien/ctrlp.vim'
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-" SuperTab
-Plug 'ervandew/supertab'
 " clear search highlighting
 Plug 'romainl/vim-cool'
-" code formatting tool
-Plug 'ambv/black'
 " imports sorting
 Plug 'stsewd/isort.nvim', {'do': ':UpdateRemotePlugins'}
 " NerdTree git support
