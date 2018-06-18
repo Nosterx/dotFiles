@@ -122,6 +122,7 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nmap <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 set number
 filetype plugin on
 filetype plugin indent on
