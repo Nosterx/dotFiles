@@ -52,7 +52,7 @@ let pipenv_venv_path = system('pipenv --venv')
 if shell_error == 0
   let venv_path = substitute(pipenv_venv_path, '\n', '', '') . '/bin/'
 else
-  let venv_path = '/usr/bin/'
+  let venv_path = '/usr/local/bin/'
 endif
 " ***END SETUP***
 
