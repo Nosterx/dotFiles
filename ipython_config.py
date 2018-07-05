@@ -619,8 +619,8 @@ c.InteractiveShellApp.exec_lines = ['%autoreload 2']
 c.InteractiveShellApp.exec_lines = ['%xmode Verbose']
 c.InteractiveShellApp.exec_lines = ['%rehashx']
 c.AliasManager.user_aliases = [
-    ('ci', 'countryside-search manage_index create_version village'),
-    ('fi', 'countryside-search manage_index index_village_version'),
-    ('di', 'countryside-search manage_index delete_version village'),
-    ('ai', 'countryside-search manage_index update_alias village'),
+    ('ci', 'countryside-search index create village'),
+    ('fi', 'countryside-search index enable village'),
+    ('di', 'countryside-search index delete village'),
+    ('ai', 'countryside-search index update_alias village'),
 ]
