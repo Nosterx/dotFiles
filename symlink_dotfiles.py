@@ -25,14 +25,17 @@ def backup_files(files, src_folder, backup_folder):
 
 def symlink_files(files, source_folder, target_folder):
     for filename in files:
-        target_filepath = os.path.join(target_folder, filename)
         try:
-            os.remove(target_filepath)
-        except OSError:
-            pass
-        source_filepath = os.path.join(source_folder,
-                                       os.path.split(filename)[1])
-        os.symlink(source_filepath, target_filepath)
+            target_filepath = os.path.join(target_folder, filename)
+            try:
+                os.remove(target_filepath)
+            except OSError:
+                pass
+            source_filepath = os.path.join(source_folder,
+                                           os.path.split(filename)[1])
+            os.symlink(source_filepath, target_filepath)
+        except Exception as ex:
+            print(ex)
 
 
 @click.command()
