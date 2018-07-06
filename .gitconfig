@@ -35,7 +35,7 @@
 	editor = vim
 	excludesfile = ~/.gitignore_global
 [merge]
-	tool = vimdiff
+	tool = fugitive
 [diff]
 	tool = vimdiff
 [filter "lfs"]
@@ -47,3 +47,5 @@
 [user]
 	email = nosterx@gmail.com
 	name = Nosterx
+[mergetool "fugitive"]
+	cmd = nvim -f -c \"Gdiff\" \"$MERGED\"

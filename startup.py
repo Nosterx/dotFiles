@@ -3,8 +3,15 @@ from subprocess import call
 import os
 
 
-os.environ['PYMSSQL_BUILD_WITH_BUNDLED_FREETDS'] = 1
+os.environ['PYMSSQL_BUILD_WITH_BUNDLED_FREETDS'] = '1'
 os.environ['CONSUL_HTTP_ADDR'] = "consul.dev.cian.ru:8500"
+os.environ['RABBITMQ_CONNECTION_STRING'] = 'amqp://test:test@192.168.16.22:5672//'
+"""
+
+CDN_USER: str = 'countryside'
+CDN_PASSWORD = '2LibGuRUQ4'
+CDN_BASE_URL = 'http://countryside.dev3.cian.ru/images'
+"""
 
 
 @register_line_magic
@@ -34,7 +41,7 @@ def runc(self):
 @register_line_magic
 def runcs(self):
     print(ecssl(self))
-    call(['countryside-serve', 'serve'])
+    call(['countryside-search', 'serve'])
 
 
 @register_line_magic
