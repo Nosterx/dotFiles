@@ -78,7 +78,7 @@ nnoremap <leader><Space>s :<C-u>DeniteBufferDir buffer<CR>
 nnoremap <leader>8 :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
 nnoremap <leader>/ :<C-u>Denite grep:. -mode=normal<CR>
 nnoremap <leader><Space>/ :<C-u>DeniteBufferDir grep:. -mode=normal<CR>
-nnoremap <leader>r :<C-u>DeniteBufferDir file_rec<CR>
+nnoremap <leader>1 :<C-u>DeniteBufferDir file_rec<CR>
 
 hi link deniteMatchedChar Special
 
