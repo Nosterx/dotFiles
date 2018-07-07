@@ -17,11 +17,13 @@ Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 " flake8
 Plug 'https://github.com/nvie/vim-flake8.git'
 " git support
-Plugin 'https://github.com/tpope/vim-fugitive.git'
+Plug 'https://github.com/tpope/vim-fugitive.git'
 " Auto-completing engine
-Plugin 'https://github.com/Valloric/YouCompleteMe.git'
+Plug 'https://github.com/Valloric/YouCompleteMe.git'
 " VimSurround
 Plug 'https://github.com/tpope/vim-surround.git'
+" repeat plugin command by dot
+Plug 'https://tpope.io/vim/repeat.git'
 " MyPy
 Plug 'integralist/vim-mypy'
 " CTRL-P
@@ -29,19 +31,19 @@ Plug 'kien/ctrlp.vim'
 " RUST
 Plug 'rust-lang/rust.vim'
 " Djnago support
-Plugin 'django.vim'
+Plug 'django.vim'
 " Git Gutter
-Plugin 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 " Smart auto-indentation for Python
-Plugin 'vim-scripts/indentpython.vim'
+Plug 'vim-scripts/indentpython.vim'
 " Syntax checker
-Plugin 'vim-syntastic/syntastic'
+Plug 'vim-syntastic/syntastic'
 " Awesome staring screen for Vim
-Plugin 'mhinz/vim-startify'
+Plug 'mhinz/vim-startify'
 " Search bar
-Plugin 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
 " Powerful commenting utility
-Plugin 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 " Rich python syntax highlighting
 Plugin 'kh3phr3n/python-syntax'
 call vundle#end()  

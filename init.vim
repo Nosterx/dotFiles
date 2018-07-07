@@ -17,6 +17,8 @@ Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'airblade/vim-gitgutter'
 " VimSurround
 Plug 'https://github.com/tpope/vim-surround.git'
+" repeat plugin command by dot
+Plug 'https://tpope.io/vim/repeat.git'
 " Tagbar
 Plug 'https://github.com/majutsushi/tagbar.git'
 " CTRL-P
@@ -36,6 +38,7 @@ Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'scrooloose/nerdcommenter'
 " Smart auto-indentation for Python
 Plug 'vim-scripts/indentpython.vim'
+Plug 'https://github.com/Shougo/denite.nvim'
 call plug#end()
 
 " ***SETUP PYTHON PATH***
@@ -66,6 +69,24 @@ let g:airline_theme='solarized'
 set t_Co=256
 let g:airline_powerline_fonts = 1
 let g:Powerline_symbols='unicode'
+
+"Denite
+nnoremap <leader>8 :<C-u>DeniteCursorWord grep:. -mode=normal<CR><Paste>
+nnoremap <C-p> :<C-u>Denite file_rec<CR>
+nnoremap <leader>s :<C-u>Denite buffer<CR>
+nnoremap <leader><Space>s :<C-u>DeniteBufferDir buffer<CR>
+nnoremap <leader>8 :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
+nnoremap <leader>/ :<C-u>Denite grep:. -mode=normal<CR>
+nnoremap <leader><Space>/ :<C-u>DeniteBufferDir grep:. -mode=normal<CR>
+nnoremap <leader>r :<C-u>DeniteBufferDir file_rec<CR>
+
+hi link deniteMatchedChar Special
+
+" denite-extra
+
+nnoremap <leader>o :<C-u>Denite directory_rec -mode=normal -no-empty<CR>
+nnoremap <leader>hs :<C-u>Denite change -mode=normal<CR>
+nnoremap <leader>hc :<C-u>Denite command_history:cmd -mode=normal<CR>
 
 "UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
