@@ -29,11 +29,3 @@ For deb-based systems:
 6. Install nice fonts https://github.com/powerline/fonts in one line
 
 `git clone https://github.com/powerline/fonts.git --depth=1 && cd fonts && ./install.sh && cd .. && rm -rf fonts`
-
-
-# TODO
-make one-step installation =)
-
-
-# Originally from
-https://github.com/flyfy1/dotFiles
